@@ -5,9 +5,9 @@ from django.shortcuts import render, get_object_or_404
 from Rests.models import Rest
 from cats.models import Cat
 
-def rests_list_view(request):
-    queryset = Rest.objects.filter(town="Jelenia Góra", cat_id=1)
-    obj = get_object_or_404(Cat, id=1)
+def rests_list_view(request, my_id):
+    queryset = Rest.objects.filter(cat_id=my_id)
+    obj = get_object_or_404(Cat, id=my_id)
     context = {
         "object_list": queryset,
         "object": obj

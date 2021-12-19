@@ -1,5 +1,14 @@
 <nav>
-    <h1>
-        <p>|   Categories   |   About   |   Cart   |</p>
-    </h1>
+        <div>
+                <ul>
+                        <h1>
+                                |   <a href ="/categories">Categories</a>   |   <a href ="/about">About</a>   |   <a href ="/cart">Cart</a>   |
+                                {%if user.is_authenticated%}
+                                <a href ="/settings">{{user.first_name}} {{user.last_name}}</a>   |   <a href ="/logout">Logout</a>
+                                {%else%}
+                                <a href ="/login">Login</a>   |   <a href ="/register">Register</a>
+                                {%endif%}
+                        </h1>
+                </ul>
+        </div>
 </nav>
