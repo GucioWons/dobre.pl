@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'cats',
     'Meals',
     'Rests',
+    'Pages',
 ]
 
 MIDDLEWARE = [

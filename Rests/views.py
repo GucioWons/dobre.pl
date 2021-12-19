@@ -6,9 +6,9 @@ from Meals.models import Meal
 from Rests.models import Rest
 
 
-def meals_list_view(request):
-    queryset = Meal.objects.filter(rest_id=1)
-    obj = get_object_or_404(Rest, id=1)
+def meals_list_view(request, my_id):
+    queryset = Meal.objects.filter(rest_id=my_id)
+    obj = get_object_or_404(Rest, id=my_id)
     context = {
         "object_list": queryset,
         "object": obj
