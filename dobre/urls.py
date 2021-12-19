@@ -17,8 +17,11 @@ from django.contrib import admin
 from django.urls import path
 
 from Rests.views import meals_list_view
+from cats.views import rests_list_view, cats_list_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('restaurants/1/', meals_list_view, name='meals-list'),
+    path('category/1/', rests_list_view, name='rests-list'),
+    path('categories/', cats_list_view, name='cats-list'),
 ]
