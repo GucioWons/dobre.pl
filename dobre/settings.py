@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'Meals',
     'Rests',
     'Pages',
+    'Accounts'
 ]
 
 MIDDLEWARE = [

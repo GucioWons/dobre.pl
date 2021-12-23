@@ -18,13 +18,12 @@ from django.urls import path, include
 
 from Pages.views import home_page
 from Rests.views import meals_list_view
-from cats.views import rests_list_view, cats_list_view
 
 urlpatterns = [
     path('', home_page, name='home-view'),
     path('admin/', admin.site.urls),
-    path('restaurants/<int:my_id>/', meals_list_view, name='meals-list'),
-    path('category/<int:my_id>/', rests_list_view, name='rests-list'),
-    path('categories/', cats_list_view, name='cats-list'),
+    path('restaurant/<int:my_id>/', meals_list_view, name='meals-list'),
     path('', include('Pages.urls')),
+    path('', include('Accounts.urls')),
+    path('', include('cats.urls')),
 ]

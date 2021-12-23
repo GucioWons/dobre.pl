@@ -11,4 +11,7 @@ class Meal(models.Model):
     featured = models.BooleanField(default=True)
 
     def get_absolute_url(self):
-        return reverse('products:product-detail', kwargs={'id':self.id})
+        return reverse('cats:rests-list', kwargs={'my_id':self.id})
+
+    def get_add_to_cart_url(self):
+        return reverse('accounts:add-to-cart', kwargs={'my_id':self.id})
