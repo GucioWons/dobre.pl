@@ -1,14 +1,20 @@
 <nav>
-        <div>
-                <ul>
-                        <h1>
-                                |   <a href ="/categories">Categories</a>   |   <a href ="/about">About</a>   |   <a href ="/cart">Cart</a>   |
-                                {%if user.is_authenticated%}
-                                <a href ="/settings">{{user.first_name}} {{user.last_name}}</a>   |   <a href ="/logout">Logout</a>
-                                {%else%}
-                                <a href ="/login">Login</a>   |   <a href ="/register">Register</a>
-                                {%endif%}
-                        </h1>
-                </ul>
-        </div>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+        </label>
+        {% load static %}
+        <label class="logo"><img class="logopng"src="{% static 'logo.png' %}">Dobre.pl</label>
+        <ul>
+                <li><a class = "active" href ="/categories">Categories</a></li>
+                <li><a href ="/about">About</a></li>
+                <li><a href ="/cart">Cart</a></li>
+                {%if user.is_authenticated%}
+                <li><a href ="/settings">{{user.first_name}} {{user.last_name}}</a></li>
+                <li><a href ="/logout">Logout</a></li>
+                {%else%}
+                <li><a href ="/login">Login</a></li>
+                <li><a href ="/register">Register</a></li>
+                {%endif%}
+        </ul>
 </nav>

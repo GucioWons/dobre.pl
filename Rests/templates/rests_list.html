@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<h1>{{object.title}}</h1>
+
+    {%for instance in object_list%}
+<a href = "{{instance.get_absolute_url}}">
+        <div class="restaurant_img">
+            <img src="{{instance.image.url}}"></a>
+            {{instance.title}}
+
+            {{instance.town}}, {{instance.adres}}
+            {{instance.description}}
+            {{instance.price}}$
+        </div>
+</a>
+    {%endfor%}
+{%endblock%}

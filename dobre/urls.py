@@ -15,15 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 from Pages.views import home_page
 from Rests.views import meals_list_view
 
 urlpatterns = [
-    path('', home_page, name='home-view'),
-    path('admin/', admin.site.urls),
-    path('restaurant/<int:my_id>/', meals_list_view, name='meals-list'),
-    path('', include('Pages.urls')),
-    path('', include('Accounts.urls')),
-    path('', include('cats.urls')),
-]
+                  path('', home_page, name='home-view'),
+                  path('admin/', admin.site.urls),
+                  path('restaurant/<int:my_id>/', meals_list_view, name='meals-list'),
+                  path('', include('Pages.urls')),
+                  path('', include('Accounts.urls')),
+                  path('', include('Rests.urls')),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
