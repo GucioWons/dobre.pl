@@ -1,7 +1,9 @@
 {%extends 'base.html'%}
 {%block content%}
-<h1>DOBRE.PL</h1>
 <form method='POST'>{%csrf_token%}
-    <p><a href='/login'> <input type='button' value='Log in' /></a><a href='/register'> <input type='button' value='Register' /></a></p>
+        <br></br>
+        <a href='/login'><button class="buttonlogin">Log in</button></a>
+        <br></br>
+        <a href='/register'><button class="buttonregister">Register</button></a>
 </form>
 {%endblock%}
