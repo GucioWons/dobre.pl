@@ -1,12 +1,24 @@
 {%extends 'base.html'%}
 
 {%block content%}
+
 {{object_list}}
-instance in object_list
+
 {%for instance in object_list%}
 <p>{{instance.title}}</p>
 <p>{{instance.description}}</p>
 <p>{{instance.price}}</p>
+
+<a href = "{{instance.get_remove_from_cart_url}}">
+    <input type='button' value='Remove from cart' />
+</a>
+{%empty%}
+<p>Koszyk jest pusty</p>
 {%endfor%}
+{%if object_list%}
 <p>{{sum}}</p>
+<a href = "/order-create">
+    <input type='button' value='Order' />
+</a>
+{%endif%}
 {%endblock%}
