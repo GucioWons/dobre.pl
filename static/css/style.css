@@ -7,10 +7,10 @@
 }
 body{
     font-family:montserrat;
-    background-color: #dde8cc;
+    background-color: #F5DEB3;
 }
 nav{
-    background:#556B2F;
+    background:#A0522D;
     height: 80px;
     width:100%;
 
@@ -40,7 +40,7 @@ nav ul li a{
     text-transform: uppercase;
 }
 a.active,a:hover{
-    background:#2b3618;
+    background:#502606;
     transition: .5s;
 }
 .checkbtn{
