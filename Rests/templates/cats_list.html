@@ -1,11 +1,17 @@
 {%extends 'base.html'%}
 
 {%block content%}
-<div class="categories">
-{%for instance in object_list%}
-    <div class="container">
-        <a href = "{{instance.get_absolute_url}}"><img src="{{instance.image.url}}"></a>
-    </div>
-{%endfor%}
-</div>
+    <h1>CATEGORIES</h1>
+    {%for instance in object_list%}
+        <div class="window">
+            <a href = "{{instance.get_absolute_url}}">
+                <div class="container">
+                    <img class="category" src="{{instance.image.url}}">
+                    <div class="overlay">
+                        <div class="text">{{instance.title}}</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {%endfor%}
 {%endblock%}

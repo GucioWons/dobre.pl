@@ -1,24 +1,31 @@
 {%extends 'base.html'%}
 
 {%block content%}
+<div class="all">
+    {%for instance in object_list%}
+    <div class="cart">
+        <div class="meal">
+            <p>{{instance.title}}</p>
+            <p>{{instance.description}}</p>
+            <p>{{instance.price}}</p>
+        </div>
+        <div class="x">
+            <a href = "{{instance.get_remove_from_cart_url}}">
+                <i class="far fa-times-circle"></i>
+            </a>
+        </div>
+    </div>
+    {%empty%}
+    <p>Koszyk jest pusty</p>
+    {%endfor%}
+</div>
 
-{{object_list}}
-
-{%for instance in object_list%}
-<p>{{instance.title}}</p>
-<p>{{instance.description}}</p>
-<p>{{instance.price}}</p>
-
-<a href = "{{instance.get_remove_from_cart_url}}">
-    <input type='button' value='Remove from cart' />
-</a>
-{%empty%}
-<p>Koszyk jest pusty</p>
-{%endfor%}
 {%if object_list%}
-<p>{{sum}}</p>
-<a href = "/order-create">
-    <input type='button' value='Order' />
-</a>
+<div class="order">
+    <p>{{sum}}</p>
+    <a href = "/order-create">
+        <input type='button' value='Order' />
+    </a>
+</div>
 {%endif%}
 {%endblock%}

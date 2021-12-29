@@ -1,16 +1,23 @@
 {%extends 'base.html'%}
 
 {%block content%}
-    <form method="POST">{% csrf_token %}
-        {{form.as_p}}
-        <button type="submit", name="change_town">Submit</button>
-    </form>
-    <form method="POST">{% csrf_token %}
-        {{form2.as_p}}
-        <button type="submit", name="change_name">Submit</button>
-    </form>
-    <form method="POST">{% csrf_token %}
-        {{form3.as_p}}
-        <button type="submit", name="change_email">Submit</button>
-    </form>
+<h1>SETTINGS</h1>
+<ul class="change">
+    <li>
+        <form method="POST">{% csrf_token %}
+            {{form2.as_p}}
+            <button type="submit", name="change_name">Submit</button>
+        </form>
+        <form method="POST">{% csrf_token %}
+            {{form3.as_p}}
+            <button type="submit", name="change_email">Submit</button>
+        </form>
+    </li>
+    <li>
+        <form method="POST">{% csrf_token %}
+            {{form.as_p}}
+            <button type="submit", name="change_town">Submit</button>
+        </form>
+    </li>
+</ul>
 {%endblock%}

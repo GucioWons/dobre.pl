@@ -4,16 +4,15 @@
 
 <h1>{{object.title}}</h1>
 
-    {%for instance in object_list%}
+{%for instance in object_list%}
 <a href = "{{instance.get_absolute_url}}">
-        <div class="restaurant_img">
-            <img src="{{instance.image.url}}"></a>
-            {{instance.title}}
-
-            {{instance.town}}, {{instance.adres}}
-            {{instance.description}}
-            {{instance.price}}$
+        <div class="restaurant">
+            <div class="restaurant_img"><img src="{{instance.image.url}}"></div>
+            <div class="restaurant_desc"><p>{{instance.title}}</p>
+                <p>{{instance.town}}, {{instance.adres}}</p>
+                <p>{{instance.price}}$</p></div>
         </div>
 </a>
     {%endfor%}
 {%endblock%}
+<img src="{{instance.image.url}}">
