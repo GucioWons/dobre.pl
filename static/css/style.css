@@ -37,7 +37,7 @@ nav ul li a{
   border-radius: 3px;
   text-transform: uppercase;
 }
-a.active,a:hover{
+nav ul li a.active,nav ul li a:hover{
   background: #502606;
   transition: .5s;
 }
@@ -239,4 +239,62 @@ button[type=submit]{
   left: 50%;
   height:100%;
   width:49.5%
+}
+
+.dish a{
+  color:blue;
+  font-weight: bold;
+  font-size: 40px;
+margin-left:720px;
+
+
+}
+.dish{
+margin-top:50px;
+font-size: 25px;
+font-weight: bold;
+}
+h6{
+font-size: 25px;
+font-weight: bold;
+color: #8B4513;
+text-align:left;
+margin-left:30px;
+margin-top:30px;
+}
+
+.buttonlogin{
+height:90px;
+width:250px;
+float:center;
+background-color: #4CAF50;
+ border: none;
+ font-size:40px;
+ font-weight: bold;
+  color: white;
+  border-radius: 2px;
+  margin-left:20px;
+  padding: 16px 32px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left:30px;
+margin-top:50px;
+}
+.buttonregister{
+height:90px;
+width:250px;
+float:center;
+background-color: #4CAF50;
+ border: none;
+ font-size:40px;
+ font-weight: bold;
+  color: white;
+  border-radius: 2px;
+  margin-left:20px;
+  padding: 16px 32px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left:30px;
+margin-top:20px;
+
 }

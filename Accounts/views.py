@@ -34,7 +34,7 @@ def add_to_cart(request, my_id):
     meal = get_object_or_404(Meal, id=my_id)
     cart = Cart.objects.get(user=request.user)
     cart.content.add(meal)
-    return redirect("/")
+    return redirect("/categories")
 
 
 def remove_from_cart(request, my_id):

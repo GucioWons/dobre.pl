@@ -80,3 +80,8 @@ def landing_page(request):
     if request.user.is_authenticated:
         return redirect('/')
     return render(request, "landing_view.html", context={})
+
+def about_view(request):
+    if not request.user.is_authenticated:
+        return redirect('/')
+    return render(request, "about_view.html", context={})
